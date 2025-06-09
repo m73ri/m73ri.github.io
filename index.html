@@ -1,11 +1,817 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
+    <!-- Nastavení znakové sady a responzivity -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahoj světe!</title>
+    <!-- Název stránky v záložce -->
+    <title>Hotel Grand MMK</title>
+    <!-- Odkaz na vlastní CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Odkaz na knihovnu pro animace při scrollování -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" >
+    <!-- Ikona stránky v prohlížeči -->
+    <link rel="icon" href="img/logo.png">
+    <!-- Google fonty pro texty na stránce -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+<!-- Hlavička s navigací -->
+<header>
+    <nav class="navbar">
+        <!-- Logo hotelu a odkaz na úvod -->
+        <a href="#home" class="logo">
+            <img src="img/logo.png" alt="Hotel Logo" />
+            Hotel Aurea
+        </a>
+        <!-- Checkbox pro mobilní menu -->
+        <input type="checkbox" id="menu-toggle" />
+        <!-- Ikona menu pro mobilní zobrazení -->
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <!-- Navigační odkazy na sekce stránky -->
+        <ul class="nav-links">
+            <li><a href="#about">O hotelu</a></li>
+            <li><a href="#rooms">Pokoje</a></li>
+            <li><a href="#pricing">Ceník</a></li>
+            <li><a href="#reviews">Recenze</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contacts">Kontakty</a></li>
+            <li><a href="#reservation">Rezervace</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Pruh s akční nabídkou -->
+<div class="promo-strip">
+    <a href="#reservation" class="promo-link">
+      🔥 Zvýhodněná nabídka: Získejte s kodem JARO25 <strong>20% slevu</strong> na ubytování při rezervaci do 1. července! 🔥
+    </a>
+</div>
+
+<!-- Úvodní banner s obrázkem a tlačítkem -->
+<section id="home" class="banner">
+    <img src="img/banner.png" alt="Hotel Banner" />
+    <div class="banner-text">
+        <div class="banner-text-inner">
+          <h1>Vítejte v hotelu Aurea!</h1>
+          <p>Vaše pohodlí na prvním místě.</p>
+          <a href="#reservation" class="hero-btn">Rezervujte teď</a>
+        </div>
+      </div>
+</section>
+
+<main>
+    <!-- Sekce o hotelu -->
+    <section id="about" class="about enhanced-about about-full-bg" data-aos="fade-up">
+      <div class="about-bg"></div>
+      <div class="about-inner">
+        <div class="about-header">
+          <img src="img/logo.png" alt="Logo hotelu" class="about-logo" />
+          <h2>O hotelu Aurea</h2>
+          <div class="about-divider"></div>
+        </div>
+        <div class="about-content">
+          <p>
+            <strong>Hotel Aurea</strong> je synonymem pro pohodlí, eleganci a nezapomenutelné zážitky v srdci města.<br>
+            <span class="about-highlight">Moderní pokoje</span> s prvotřídním vybavením uspokojí rodiny i náročné cestovatele.<br>
+            <span class="about-icon">🍽️</span> <b>Restaurace</b> nabízí špičkovou kuchyni z čerstvých surovin.<br>
+            <span class="about-icon">🧖‍♂️</span> <b>Wellness centrum</b> se saunou, vířivkou a fitness je ideální pro odpočinek.<br>
+            <span class="about-icon">👨‍👩‍👧‍👦</span> <b>Dětská herna</b> a bezpečné hřiště potěší i nejmenší hosty.<br>
+            <span class="about-icon">🎉</span> <b>Konferenční sál</b> pro firemní akce i soukromé oslavy.<br>
+            <br>
+            <em>Profesionální personál je vám k dispozici 24/7. Přijďte zažít Aurea – místo, kde se rádi vrátíte.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel s ukázkou pokojů -->
+    <section id="rooms" class="lux-carousel-section" data-aos="fade-up">
+      <h2>Prémiové pokoje</h2>
+      <div class="lux-carousel">
+        <div class="lux-carousel-track">
+          <!-- První slide s obrázkem a popisem -->
+          <div class="lux-slide active">
+            <img src="img/room4.png" alt="Prezidentské apartmá">
+            <div class="lux-room-info">
+              <h3>Prezidentské apartmá</h3>
+              <p>Prostorné, elegantní a vybavené soukromým balkonem.</p>
+            </div>
+          </div>
+          <div class="lux-slide">
+            <img src="img/room1.png" alt="Luxusní pokoj">
+            <div class="lux-room-info">
+              <h3>Luxusní pokoj</h3>
+              <p>Moderní pohodlí s výhledem na město a prvotřídním vybavením.</p>
+            </div>
+          </div>
+          <div class="lux-slide">
+            <img src="img/room3.png" alt="Juniorské apartmá">
+            <div class="lux-room-info">
+              <h3>Juniorské apartmá</h3>
+              <p>Ideální pro rodiny, s útulnou odpočinkovou zónou.</p>
+            </div>
+          </div>
+          <div class="lux-slide">
+            <img src="img/room2.png" alt="Klasický pokoj">
+            <div class="lux-room-info">
+              <h3>Klasický pokoj</h3>
+              <p>Elegantní jednoduchost pro relaxační pobyt.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Tlačítka pro posun v carouselu -->
+        <button class="lux-arrow left" aria-label="Předchozí">
+          <span></span>
+        </button>
+        <button class="lux-arrow right" aria-label="Další">
+          <span></span>
+        </button>
+        <!-- Indikátory pro jednotlivé slidy -->
+        <div class="lux-indicators">
+          <span class="lux-indicator active"></span>
+          <span class="lux-indicator"></span>
+          <span class="lux-indicator"></span>
+          <span class="lux-indicator"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ceník pokojů -->
+    <section id="pricing" class="pricing" data-aos="fade-up">
+        <h2>Ceník</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Typ pokoje</th>
+                    <th>Obsazenost</th>
+                    <th>Cena/noc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jednolůžkový pokoj</td>
+                    <td>1 osoba</td>
+                    <td>900 Kč</td>
+                </tr>
+                <tr>
+                    <td>Dvoulůžkový pokoj</td>
+                    <td>2 osoby</td>
+                    <td>1500 Kč</td>
+                </tr>
+                <tr>
+                    <td>Rodinný pokoj</td>
+                    <td>4 osoby</td>
+                    <td>2500 Kč</td>
+                </tr>
+                <tr>
+                    <td>Luxusní apartmán</td>
+                    <td>2 osoby</td>
+                    <td>3200 Kč</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sekce s odpočtem do konce akce -->
+    <section class="countdown-section" data-aos="zoom-in">
+      <div class="countdown-highlight">
+        <span class="countdown-badge">SLEVA 20&nbsp;%</span>
+        <span class="countdown-text">
+          Zadejte kód <strong>JARO25</strong> při rezervaci a získáte 20&nbsp;% slevu na ubytování!
+        </span>
+      </div>
+      <h2>Zvýhodněné ubytování!</h2>
+      <p>Akce končí za:</p>
+      <div id="countdown">00:00:00:00</div>
+    </section>
+
+    <!-- Rezervační formulář pro hosty -->
+    <section id="reservation" class="reservation-section" data-aos="fade-up">
+      <div class="reservation-card">
+        <h2>Rezervace ubytování</h2>
+        <!-- Formulář pro rezervaci -->
+        <form id="reservation-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="jmeno">Jméno a příjmení*</label>
+              <input type="text" id="jmeno" name="jmeno" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail*</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telefon">Telefon*</label>
+              <input type="tel" id="telefon" name="telefon" required>
+            </div>
+            <div class="form-group">
+              <label for="people">Počet osob*</label>
+              <input type="number" id="people" name="people" min="1" max="8" value="1" required>
+            </div>
+            <div class="form-group">
+              <label for="room">Typ pokoje*</label>
+              <select id="room" name="room" required>
+                <option value="">Vyberte pokoj</option>
+                <option>Jednolůžkový pokoj</option>
+                <option>Dvoulůžkový pokoj</option>
+                <option>Rodinný pokoj</option>
+                <option>Luxusní apartmán</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="from">Příjezd*</label>
+              <input type="date" id="from" name="from" required>
+            </div>
+            <div class="form-group">
+              <label for="to">Odjezd*</label>
+              <input type="date" id="to" name="to" required>
+              <span id="date-error" style="color:#b00; font-weight:600; font-size:0.98em;"></span>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="note">Poznámka (volitelné)</label>
+            <textarea id="note" name="note" rows="2" placeholder="Speciální požadavky..."></textarea>
+          </div>
+          <!-- Řádek pro zadání slevového kódu -->
+          <div class="form-group full discount-row">
+            <label for="discount" class="discount-label">
+              <span class="discount-badge">-20&nbsp;%</span>
+              Slevový kód
+            </label>
+            <div class="discount-flex">
+              <input type="text" id="discount" name="discount" placeholder="Např. JARO25" maxlength="16" class="discount-input">
+              <button type="button" id="apply-discount-btn" class="apply-discount-btn">Uplatnit</button>
+            </div>
+          </div>
+          <!-- Zobrazení ceny podle výběru -->
+          <div class="form-group full price-group">
+            <label for="price">Cena</label>
+            <div id="price-box">
+              <span id="original-price" style="color:#888; text-decoration:line-through; font-size:1em; margin-right:0.7em; display:none;"></span>
+              <input type="text" id="price" name="price" readonly>
+            </div>
+          </div>
+          <button type="submit" class="reservation-btn">Odeslat rezervaci</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sekce s recenzemi hostů -->
+    <section id="reviews" class="reviews bg-reviews" data-aos="fade-up">
+      <h2>Recenze hostů</h2>
+      <div class="review-rows">
+        <div class="review-row" id="review-row-1">
+          <!-- První tři recenze -->
+          <div class="review">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="Recenzent">
+            <div class="stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+            <p>Naprosto úžasné ubytování! Doporučuji všem.</p>
+            <span>John D.</span>
+          </div>
+          <div class="review">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lenka" alt="Recenzent">
+            <div class="stars" aria-label="4 z 5 hvězdiček">★★★★☆</div>
+            <p>Skvělý servis, krásné prostředí, určitě se vrátím.</p>
+            <span>Lenka P.</span>
+          </div>
+          <div class="review">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Martin" alt="Recenzent">
+            <div class="stars" aria-label="3 z 5 hvězdiček">★★★☆☆</div>
+            <p>Příjemné místo, snídaně by mohly být bohatší.</p>
+            <span>Martin V.</span>
+          </div>
+        </div>
+        <div class="review-row" id="review-row-2">
+          <!-- Další recenze se přidávají pomocí JavaScriptu -->
+        </div>
+      </div>
+      <!-- Tlačítko pro přidání nové recenze -->
+      <button id="add-review-btn" class="add-review-btn" type="button">Přidat recenzi</button>
+      <!-- Formulář pro novou recenzi -->
+      <form class="review-form" id="review-form" autocomplete="off" style="display:none;">
+        <h3>Přidejte svoji recenzi</h3>
+        <div class="stars-input">
+          <input type="radio" id="star5" name="stars" value="5" required>
+          <label for="star5" title="5 hvězdiček">★</label>
+          <input type="radio" id="star4" name="stars" value="4">
+          <label for="star4" title="4 hvězdičky">★</label>
+          <input type="radio" id="star3" name="stars" value="3">
+          <label for="star3" title="3 hvězdičky">★</label>
+          <input type="radio" id="star2" name="stars" value="2">
+          <label for="star2" title="2 hvězdičky">★</label>
+          <input type="radio" id="star1" name="stars" value="1">
+          <label for="star1" title="1 hvězdička">★</label>
+        </div>
+        <textarea name="text" placeholder="Vaše recenze..." rows="3" required></textarea>
+        <input name="jmeno" type="text" placeholder="Vaše jméno (volitelné)">
+        <button type="submit">Odeslat recenzi</button>
+      </form>
+    </section>
+
+    <!-- Sekce s často kladenými dotazy -->
+    <section id="faq" class="faq" data-aos="fade-up">
+        <h2>Často kladené dotazy</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">Jsou v ceně snídaně?</button>
+                <div class="faq-answer">Ano, všechny pokoje mají snídani v ceně.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Mohu přijet se zvířetem?</button>
+                <div class="faq-answer">Domácí mazlíčci jsou vítáni za příplatek 150 Kč/den.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Kde mohu parkovat?</button>
+                <div class="faq-answer">Parkování je zdarma na hotelovém parkovišti.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Je na pokoji Wi-Fi?</button>
+                <div class="faq-answer">Ano, v celém hotelu je zdarma vysokorychlostní Wi-Fi připojení.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Jaký je čas příjezdu a odjezdu?</button>
+                <div class="faq-answer">Check-in je od 14:00, check-out do 11:00. Po domluvě lze časy upravit.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktní sekce s adresou, telefonem a mapou -->
+    <section id="contacts" class="contacts-modern" data-aos="fade-up">
+      <div class="contacts-inner">
+        <div class="contacts-info-block">
+          <h2>Kontakty</h2>
+          <ul class="contacts-list">
+            <li>
+              <span class="contact-icon" aria-label="Adresa">
+                <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><circle cx="11" cy="10" r="7.5" stroke="#bfa144" stroke-width="2"/><circle cx="11" cy="10" r="2.5" fill="#bfa144"/></svg>
+              </span>
+              <span class="contact-label">Adresa:</span>
+              <span class="contact-value">Weilova 1270/4</span>
+            </li>
+            <li>
+              <span class="contact-icon" aria-label="Telefon">
+                <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><path d="M5.5 3.5A2 2 0 0 1 7.5 1.5h7a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-15z" stroke="#bfa144" stroke-width="2"/><rect x="8" y="16" width="6" height="1.5" rx=".75" fill="#bfa144"/></svg>
+              </span>
+              <span class="contact-label">Telefon:</span>
+              <a class="contact-value" href="tel:+420123456789">+420 123 456 789</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-label="E-mail">
+                <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="5" width="16" height="12" rx="2" stroke="#bfa144" stroke-width="2"/><path d="M5 7l6 5 6-5" stroke="#bfa144" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+              <span class="contact-label">E-mail:</span>
+              <a class="contact-value" href="mailto:info@hotelaurea.cz">info@hotelaurea.cz</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-label="Instagram">
+                <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="4" y="4" width="14" height="14" rx="4" stroke="#bfa144" stroke-width="2"/><circle cx="11" cy="11" r="3.5" stroke="#bfa144" stroke-width="2"/><circle cx="15.2" cy="6.8" r="1" fill="#bfa144"/></svg>
+              </span>
+              <span class="contact-label">Instagram:</span>
+              <a class="contact-value" href="#" target="_blank">@HotelAurea</a>
+            </li>
+            <li>
+              <span class="contact-icon" aria-label="Facebook">
+                <svg width="22" height="22" fill="none" viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="4" stroke="#bfa144" stroke-width="2"/><path d="M13 9h2V7h-2V6c0-.55.45-1 1-1h1V3h-2c-1.66 0-3 1.34-3 3v1H8v2h2v6h3v-6z" fill="#bfa144"/></svg>
+              </span>
+              <span class="contact-label">Facebook:</span>
+              <a class="contact-value" href="#" target="_blank">/HotelAurea</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contacts-map-block">
+          <div class="contacts-map-wrapper">
+            <!-- Vložená mapa Google Maps -->
+            <iframe src="https://maps.google.com/maps?q=Weilova%201270/4,%20102%2000%20Praha%2010&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- Zápatí stránky s logem a copyrightem -->
+<footer>
+    <img src="img/logo.png" alt="MMK Hotel Logo" class="footer-logo" />
+    <span>&copy; 2024 Grand MMK Hotel &ndash; Váš zážitek, naše radost</span>
+</footer>
+
+<!-- Skript pro carousel s pokoji -->
+<script>
+  // Po načtení stránky nastaví carousel a jeho automatické přepínání
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.lux-carousel .lux-slide');
+    const indicators = document.querySelectorAll('.lux-carousel .lux-indicator');
+    const prev = document.querySelector('.lux-carousel .lux-arrow.left');
+    const next = document.querySelector('.lux-carousel .lux-arrow.right');
+    let index = 0;
+    let timer = null;
+    const AUTOPLAY_MS = 4000;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === i);
+        indicators[idx].classList.toggle('active', idx === i);
+      });
+      index = i;
+    }
+
+    function nextSlide() {
+      showSlide((index + 1) % slides.length);
+    }
+    function prevSlide() {
+      showSlide((index - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      timer = setInterval(nextSlide, AUTOPLAY_MS);
+    }
+    function stopAutoplay() {
+      if (timer) clearInterval(timer);
+    }
+
+    prev.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+    next.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    indicators.forEach((btn, idx) => {
+      btn.addEventListener('click', () => { showSlide(idx); startAutoplay(); });
+    });
+
+    // Zastaví automatické přepínání při najetí myší
+    document.querySelector('.lux-carousel').addEventListener('mouseenter', stopAutoplay);
+    document.querySelector('.lux-carousel').addEventListener('mouseleave', startAutoplay);
+
+    showSlide(0);
+    startAutoplay();
+  });
+</script>
+
+<!-- Skript pro odpočet do konce akce -->
+<script>
+  // Spustí odpočet do zadaného data
+  function startCountdown() {
+      const end = new Date('2025-07-01T23:59:00').getTime();
+      setInterval(function() {
+          const now = new Date().getTime();
+          const dist = end - now;
+
+          let d = Math.floor(dist / (1000 * 60 * 60 * 24));
+          let h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+          let s = Math.floor((dist % (1000 * 60)) / 1000);
+
+          document.getElementById('countdown').innerHTML =
+              (d < 10 ? "0" : "") + d + ":" +
+              (h < 10 ? "0" : "") + h + ":" +
+              (m < 10 ? "0" : "") + m + ":" +
+              (s < 10 ? "0" : "") + s;
+      }, 1000);
+  }
+  startCountdown();
+</script>
+
+<!-- Skript pro přidávání recenzí a hvězdiček -->
+<script>
+  // Přidání nové recenze do seznamu a práce s hvězdičkami
+  document.getElementById('review-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const stars = this.querySelector('input[name="stars"]:checked')?.value;
+    const text = this.querySelector('textarea[name="text"]').value;
+    const jmeno = this.querySelector('input[name="jmeno"]').value.trim() || "Anonym";
+    let avatarSrc = "https://api.dicebear.com/7.x/avataaars/svg?seed=" + encodeURIComponent(jmeno + Math.floor(Math.random()*1000));
+
+    let full = "★".repeat(Number(stars));
+    let empty = "☆".repeat(5-Number(stars));
+    let starsText = full + empty;
+
+    const reviewDiv = document.createElement('div');
+    reviewDiv.className = 'review';
+    reviewDiv.innerHTML =
+      `<img src="${avatarSrc}" alt="Recenzent">
+       <div class="stars" aria-label="${stars} z 5 hvězdiček">${starsText}</div>
+       <p>${text.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</p>
+       <span>${jmeno}</span>`;
+
+    // Přidá recenzi do druhé řady
+    const reviewRow2 = document.getElementById('review-row-2');
+    reviewRow2.appendChild(reviewDiv);
+
+    this.reset();
+    reviewForm.style.display = 'none';
+    addBtn.style.display = 'block';
+    addBtn.scrollIntoView({behavior: "smooth"});
+  });
+
+  // Zvýraznění hvězdiček při najetí a kliknutí
+  document.querySelectorAll('.stars-input label').forEach(function(star, idx, arr){
+    star.addEventListener('mouseenter', function(){
+      arr.forEach(function(s, i){
+        s.style.color = (i >= idx) ? '#FFD600' : '#d2c363';
+      });
+    });
+    star.parentNode.addEventListener('mouseleave', function(){
+      const checked = document.querySelector('.stars-input input:checked');
+      arr.forEach(function(s, i){
+        if (checked) {
+          const checkedIdx = Array.from(arr).findIndex(l => l.htmlFor === checked.id);
+          s.style.color = (i >= checkedIdx) ? '#FFD600' : '#d2c363';
+        } else {
+          s.style.color = '#d2c363';
+        }
+      });
+    });
+    star.addEventListener('click', function(){
+      arr.forEach(function(s, i){
+        s.style.color = (i >= idx) ? '#FFD600' : '#d2c363';
+      });
+    });
+  });
+
+  // Zajištění správného zvýraznění po výběru hvězdičky
+  document.querySelectorAll('.stars-input input[type="radio"]').forEach(function(input){
+    input.addEventListener('change', function(){
+      let stars = document.querySelectorAll('.stars-input label');
+      let checkedIdx = Array.from(stars).findIndex(l => l.htmlFor === this.id);
+      stars.forEach(function(s, i){
+        s.style.color = (i >= checkedIdx) ? '#FFD600' : '#d2c363';
+      });
+    });
+  });
+</script>
+
+<!-- Skript pro přesun recenzí a zobrazení formuláře -->
+<script>
+  // Přesune recenze do správných řad a zobrazí formulář po kliknutí
+  document.addEventListener('DOMContentLoaded', function() {
+    const reviewRow1 = document.getElementById('review-row-1');
+    const reviewRow2 = document.getElementById('review-row-2');
+    const allReviews = Array.from(reviewRow1.children);
+
+    // Pokud je více než 3 recenze, přesune další do druhé řady
+    while (reviewRow1.children.length > 3) {
+      reviewRow2.appendChild(reviewRow1.children[3]);
+    }
+
+    const addBtn = document.getElementById('add-review-btn');
+    const reviewForm = document.getElementById('review-form');
+    addBtn.addEventListener('click', function() {
+      reviewForm.style.display = 'flex';
+      addBtn.style.display = 'none';
+      reviewForm.scrollIntoView({behavior: "smooth"});
+    });
+  });
+</script>
+
+<!-- Skript pro rozbalování odpovědí v sekci FAQ -->
+<script>
+  // Otevírání a zavírání odpovědí v sekci FAQ
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.faq-answer').forEach(function(ans) {
+          if (ans !== btn.nextElementSibling) {
+            ans.style.maxHeight = null;
+            ans.style.opacity = 0;
+            ans.style.marginTop = "0";
+          }
+        });
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+          if (q !== btn) q.classList.remove('active');
+        });
+
+        btn.classList.toggle('active');
+        const answer = btn.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+          answer.style.opacity = 0;
+          answer.style.marginTop = "0";
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          answer.style.opacity = 1;
+          answer.style.marginTop = "0.2em";
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Skript pro zavírání mobilního menu po kliknutí na odkaz -->
+<script>
+  // Zavře menu na mobilu po kliknutí na odkaz
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 850) {
+          menuToggle.checked = false;
+          menuIcon.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    menuToggle.addEventListener('change', function() {
+      menuIcon.setAttribute('aria-expanded', menuToggle.checked ? 'true' : 'false');
+    });
+  });
+</script>
+
+<!-- Skript pro animace při scrollování -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Inicializace knihovny AOS pro animace
+  AOS.init({
+    duration: 850,
+    once: true,
+    easing: 'ease-out-cubic'
+  });
+</script>
+
+<!-- Skript pro validaci datumu v rezervačním formuláři -->
+<script>
+  // Kontrola, že datum odjezdu není dříve než příjezd
+  const arrival = document.getElementById('arrival');
+  const departure = document.getElementById('departure');
+  const error = document.getElementById('date-error');
+
+  arrival.addEventListener('change', function() {
+    departure.min = arrival.value;
+    if (departure.value && departure.value < arrival.value) {
+      error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+      departure.value = '';
+    } else {
+      error.textContent = '';
+    }
+  });
+
+  departure.addEventListener('change', function() {
+    if (departure.value < arrival.value) {
+      error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+      departure.value = '';
+    } else {
+      error.textContent = '';
+    }
+  });
+
+  document.getElementById('reservation-form').addEventListener('submit', function(e) {
+    if (departure.value < arrival.value) {
+      error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+      e.preventDefault();
+    }
+  });
+</script>
+
+<!-- Skript pro výpočet ceny a slevy v rezervačním formuláři -->
+<script>
+  // Počítá cenu podle typu pokoje, počtu nocí a případné slevy
+  document.addEventListener('DOMContentLoaded', function() {
+    const roomPrices = {
+      "Jednolůžkový pokoj": 900,
+      "Dvoulůžkový pokoj": 1500,
+      "Rodinný pokoj": 2500,
+      "Luxusní apartmán": 3200
+    };
+
+    let slevaAktivni = false;
+
+    function getNights() {
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      if (!from || !to) return 1;
+      const d1 = new Date(from);
+      const d2 = new Date(to);
+      const diff = Math.round((d2-d1)/(1000*60*60*24));
+      return diff >= 1 ? diff : 1;
+    }
+
+    function updatePrice() {
+      const room = document.getElementById('room').value;
+      const nights = getNights();
+      let price = roomPrices[room] || 0;
+      if (price && nights) price = price * nights;
+
+      let finalPrice = price;
+      const origSpan = document.getElementById('original-price');
+
+      if (slevaAktivni && price > 0) {
+        finalPrice = Math.round(price * 0.8);
+        origSpan.textContent = price + " Kč";
+        origSpan.style.display = "inline";
+        document.getElementById('price').value = finalPrice + " Kč";
+      } else {
+        origSpan.textContent = "";
+        origSpan.style.display = "none";
+        document.getElementById('price').value = price > 0 ? price + " Kč" : "";
+      }
+    }
+
+    document.getElementById('room').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('from').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('to').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('people').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+
+    document.getElementById('apply-discount-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const discountInput = document.getElementById('discount');
+      let discountCode = discountInput ? discountInput.value.trim().toUpperCase() : "";
+      if (discountCode === "JARO25") {
+        slevaAktivni = true;
+      } else {
+        slevaAktivni = false;
+        alert("Neplatný slevový kód.");
+      }
+      updatePrice();
+      discountInput.focus();
+    });
+
+    updatePrice();
+  });
+</script>
+
+<!-- Skript pro validaci datumu a výpočet ceny (druhá verze, pro jistotu) -->
+<script>
+  // Kontrola datumu a aktualizace ceny při změně polí ve formuláři
+  document.addEventListener('DOMContentLoaded', function() {
+    const roomPrices = {
+      "Jednolůžkový pokoj": 900,
+      "Dvoulůžkový pokoj": 1500,
+      "Rodinný pokoj": 2500,
+      "Luxusní apartmán": 3200
+    };
+
+    let slevaAktivni = false;
+
+    function getNights() {
+      const from = document.getElementById('from').value;
+      const to = document.getElementById('to').value;
+      if (!from || !to) return 1;
+      const d1 = new Date(from);
+      const d2 = new Date(to);
+      const diff = Math.round((d2-d1)/(1000*60*60*24));
+      return diff >= 1 ? diff : 1;
+    }
+
+    function updatePrice() {
+      const room = document.getElementById('room').value;
+      const nights = getNights();
+      let price = roomPrices[room] || 0;
+      if (price && nights) price = price * nights;
+
+      let finalPrice = price;
+      const origSpan = document.getElementById('original-price');
+
+      if (slevaAktivni && price > 0) {
+        finalPrice = Math.round(price * 0.8);
+        origSpan.textContent = price + " Kč";
+        origSpan.style.display = "inline";
+        document.getElementById('price').value = finalPrice + " Kč";
+      } else {
+        origSpan.textContent = "";
+        origSpan.style.display = "none";
+        document.getElementById('price').value = price > 0 ? price + " Kč" : "";
+      }
+    }
+
+    document.getElementById('room').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('from').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('to').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('people').addEventListener('change', function(){ slevaAktivni = false; updatePrice(); });
+    document.getElementById('room').addEventListener('change', updatePrice);
+    document.getElementById('from').addEventListener('change', updatePrice);
+    document.getElementById('to').addEventListener('change', updatePrice);
+    document.getElementById('people').addEventListener('change', updatePrice);
+
+    const from = document.getElementById('from');
+    const to = document.getElementById('to');
+    const error = document.getElementById('date-error');
+
+    from.addEventListener('change', function() {
+      to.min = from.value;
+      if (to.value && to.value < from.value) {
+        error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+        to.value = '';
+      } else {
+        error.textContent = '';
+      }
+    });
+
+    to.addEventListener('change', function() {
+      if (to.value < from.value) {
+        error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+        to.value = '';
+      } else {
+        error.textContent = '';
+      }
+    });
+
+    document.getElementById('reservation-form').addEventListener('submit', function(e) {
+      if (to.value < from.value) {
+        error.textContent = 'Datum odjezdu musí být stejné nebo pozdější než příjezd.';
+        e.preventDefault();
+      }
+    });
+  });
+</script>
 </body>
 </html>
