@@ -729,13 +729,10 @@ section.rooms { padding: 2em 0; margin: 0 auto; display: block; }
   border-radius: 0;
   box-shadow: none;
   background: none;
-  /* width: 100%;  <-- SMAZAT nebo zakomentovat */
-  width: auto;      /* PŘIDAT */
+  width: auto;
   max-width: 1400px;
   display: flex;
   justify-content: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .about-bg {
