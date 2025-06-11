@@ -1238,3 +1238,11 @@ html, body {
     max-height: 140px;
   }
 }
+
+.banner,
+.banner img,
+.about-bg,
+.contacts-modern {
+  width: 100%;
+  max-width: 100%;
+}
