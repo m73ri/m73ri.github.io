@@ -738,9 +738,11 @@ section.rooms { padding: 2em 0; margin: 0 auto; display: block; }
 .about-bg {
   position: absolute;
   inset: 0;
-  width: 100vw;         /* pozadí přes celou šířku */
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100vw;
+  left: 0; /* přidej */
+  /* Smaž nebo zakomentuj: */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   background: linear-gradient(120deg, #fffbe7 70%, #f7f5ef 100%), url('img/pozadi.png') center/cover no-repeat;
   opacity: 0.22;
   z-index: 0;
@@ -1070,6 +1072,7 @@ html, body {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .discount-flex {
@@ -1178,7 +1181,7 @@ html, body {
     left: 0;
     right: 0;
   }
-  .lux-slide img {
+  .lux_slide img {
     width: 96vw;
     max-width: 96vw;
     height: 100%;
